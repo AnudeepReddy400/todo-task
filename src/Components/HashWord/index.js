@@ -1,12 +1,11 @@
 import {connect} from 'react-redux'
-import {todoWord,filterTodo} from '../../actions'
+import {todoWord} from '../../actions'
 
 
 const HashWord = (props)=>{
     const{todos,searchWord} = props
     const wordSelected = value =>{
         props.todoWord(value)
-        props.filterTodo(value)
     }
     if(searchWord === ""){
         return <div></div>
@@ -29,4 +28,4 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps,{todoWord,filterTodo})(HashWord)
+export default connect(mapStateToProps,{todoWord})(HashWord)

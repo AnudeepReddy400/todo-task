@@ -1,10 +1,11 @@
 
 let selectedTodos = []
-
-export const todos = (state = [], action) =>{
+console.log(selectedTodos)
+export const todos = (state = selectedTodos, action) =>{
     switch(action.type){
         case 'ADD_TODO':
-            let todoCreatedAt = new Date()
+            let todoCreatedAt = new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium', timeStyle: 'medium' }).format(new Date())
+            console.log("react",todoCreatedAt)
             let newTodos = [{todoName:action.payload,todoSelected:false,todoCreated:todoCreatedAt},...state]
             
             return newTodos
@@ -25,8 +26,9 @@ export const todos = (state = [], action) =>{
             return state
 
         case 'FILTER_TODO':
-            let selectedTodoObject = state.filter((each) => each.todoName === action.payload)
-            return selectedTodoObject
+            let Alltodos = [...state]
+            let hashedTodos = Alltodos.filter((each) =>each.todoName === action.payload)
+            return hashedTodos
         default:
             return state
 
