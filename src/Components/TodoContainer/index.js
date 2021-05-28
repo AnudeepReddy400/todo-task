@@ -1,12 +1,13 @@
 import AddTodo from '../AddTodo'
 import TodoList from '../TodoList'
 import {connect} from 'react-redux'
-import {resetTodos} from '../../actions'
+import {resetTodos,clearTodo} from '../../actions'
 import SelectedHashWord from '../SelectedHashWord'
 
 const TodoContainer = (props) =>{
     const todoListReset = () =>{
         props.dispatch(resetTodos()) 
+        props.dispatch(clearTodo())
     }
     return(
     <div className="todos-bg-container">

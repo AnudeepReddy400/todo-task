@@ -149,6 +149,7 @@
   padding-bottom: 5px;
   padding-right: 20px;
   padding-left: 20px;
+  cursor: pointer;
 }
 .highlight-text{
   color: blue;
