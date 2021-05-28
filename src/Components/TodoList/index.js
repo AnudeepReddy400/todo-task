@@ -1,9 +1,16 @@
 import {connect} from 'react-redux'
-import{selectTodo,filterTodo} from '../../actions'
+import{selectTodo,filterTodo,hashedTodo} from '../../actions'
+import {useState} from 'react'
 
 const TodoList = (props) =>{
     
-   
+    //const [todoBgColor,selectTodoBgColor] = useState("white-bg")
+    //const onPointed = (value) =>{
+    //    selectTodoBgColor(value)
+    //}
+    //onMouseOver = {()=>onPointed("green-bg")} onMouseOut = {()=>onPointed("white-bg")}
+    //${todoBgColor}
+    
     const todoSelected = each =>{
         props.selectTodo(each)
         
@@ -12,6 +19,7 @@ const TodoList = (props) =>{
     const selectedHashedWord = value =>{
         if(value[0] === "#"){
             props.filterTodo(value)
+            props.hashedTodo(value)
         }
     }
 
@@ -40,4 +48,4 @@ const mapStateToProps = (state) =>{
     }
 }
 
-export default connect(mapStateToProps,{selectTodo,filterTodo})(TodoList)
+export default connect(mapStateToProps,{selectTodo,filterTodo,hashedTodo})(TodoList)

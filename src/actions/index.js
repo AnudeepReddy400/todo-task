@@ -31,3 +31,22 @@ export const filterTodo = (word) =>{
         payload : word
     }
 }
+
+export const hashedTodo = (word) =>{
+    return{
+        type : "HASHED_TODO",
+        payload : word
+    }
+}
+
+export const displayALLTODO = ()=>{
+    return{
+        type : "DISPLAY_ALL"
+    }
+}
+
+export const clearTodo = ()=>{
+    return{
+        type:"CLEAR_ALL"
+    }
+}

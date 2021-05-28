@@ -1,6 +1,7 @@
 import {connect} from 'react-redux'
 import HashWord from '../HashWord'
 import {Component} from 'react'
+import './index.css'
 
 import {addTodo,todoWord} from '../../actions'
 
@@ -25,7 +26,7 @@ class AddTodo extends Component{
     }
     render(){
     return(
-        <div>
+        <div className = "input-container">
             <input type="text" className="todo-user-input" value ={this.props.searchWord} onKeyDown={this.onAddTodo} onChange = {this.changeValue}/>
             <HashWord/>
         </div>

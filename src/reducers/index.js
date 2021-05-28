@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage'
 
 import {todos} from './todos'
 import {searchWord} from './searchWord'
+import{displayHashedTodo} from './displayHashedTodo'
 
 
 const persisitConfig ={
@@ -16,6 +17,7 @@ const persisitConfig ={
 const rootReducer = combineReducers({
  todos,
  searchWord,
+ displayHashedTodo
 })
 
 export default persistReducer(persisitConfig,rootReducer);

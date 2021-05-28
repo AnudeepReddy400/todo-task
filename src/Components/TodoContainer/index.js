@@ -2,6 +2,7 @@ import AddTodo from '../AddTodo'
 import TodoList from '../TodoList'
 import {connect} from 'react-redux'
 import {resetTodos} from '../../actions'
+import SelectedHashWord from '../SelectedHashWord'
 
 const TodoContainer = (props) =>{
     const todoListReset = () =>{
@@ -18,6 +19,7 @@ const TodoContainer = (props) =>{
               <button type = "button" className = "reset-button" onClick ={todoListReset}>Reset</button>
               </div>
               <AddTodo />
+              <SelectedHashWord/>
               <h1 className="todo-items-heading">
                 My <span className="todo-items-heading-subpart">Tasks</span>
               </h1>
