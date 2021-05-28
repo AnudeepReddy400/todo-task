@@ -7,7 +7,6 @@ export const todos = (state = selectedTodos, action) =>{
     switch(action.type){
         case 'ADD_TODO':
             let todoCreatedAt = new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium', timeStyle: 'medium' }).format(new Date())
-            console.log("react",todoCreatedAt)
             let newTodos = [{todoName:action.payload,todoSelected:false,todoCreated:todoCreatedAt},...state]
             todoList = newTodos
             return newTodos

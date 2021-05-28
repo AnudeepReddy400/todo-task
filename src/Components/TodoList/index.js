@@ -42,7 +42,6 @@ const TodoList = (props) =>{
 }
 
 const mapStateToProps = (state) =>{
-    console.log(state)
     return{
         todos : state.todos,
     }

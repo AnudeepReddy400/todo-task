@@ -11,7 +11,6 @@ class AddTodo extends Component{
     onAddTodo = event =>{
       if (event.key === "Enter"){
         let input = event.target.value
-        console.log(input)
         this.props.dispatch(addTodo(input))
         event.target.value =''
       }
