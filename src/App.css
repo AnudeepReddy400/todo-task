@@ -153,6 +153,7 @@
 }
 .highlight-text{
   color: blue;
+  cursor: pointer;
 }
 
 .selectedTodo{

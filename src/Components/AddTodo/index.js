@@ -3,17 +3,22 @@ import HashWord from '../HashWord'
 import {Component} from 'react'
 import './index.css'
 
-import {addTodo,todoWord} from '../../actions'
+import {addTodo,todoWord,clearSuggetions} from '../../actions'
 
 
 class AddTodo extends Component{
+
+    
    
     onAddTodo = event =>{
       if (event.key === "Enter"){
         let input = event.target.value
         this.props.dispatch(addTodo(input))
+        this.props.dispatch(clearSuggetions())
         event.target.value =''
+        
       }
+      
       
     }
 
@@ -22,6 +27,7 @@ class AddTodo extends Component{
     changeValue = event =>{
         let searchWord = event.target.value
         this.props.dispatch(todoWord(searchWord))
+        
     }
     render(){
     return(

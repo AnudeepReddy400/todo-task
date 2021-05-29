@@ -50,3 +50,9 @@ export const clearTodo = ()=>{
         type:"CLEAR_ALL"
     }
 }
+
+export const clearSuggetions = () =>{
+    return{
+        type:"CLEAR_SUGGESTIONS"
+    }
+}
